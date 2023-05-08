@@ -2,8 +2,15 @@ from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 print("loading model")
 
-tokenizer = AutoTokenizer.from_pretrained("facebook/nllb-moe-54b")
-model = AutoModelForSeq2SeqLM.from_pretrained("facebook/nllb-moe-54b")
+tokenizer = AutoTokenizer.from_pretrained("/Research/NLLB_moe_54B")
+
+print("finish loading tokenizer")
+
+
+model = AutoModelForSeq2SeqLM.from_pretrained("/Research/NLLB_moe_54B")
+
+print("finish loading model")
+
 
 article = "Şeful ONU spune că nu există o soluţie militară în Siria"
 inputs = tokenizer(article, return_tensors="pt")

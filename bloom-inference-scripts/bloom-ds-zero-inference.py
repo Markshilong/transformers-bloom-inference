@@ -66,6 +66,9 @@ print_rank0(f"*** Loading the model {model_name}")
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 config = AutoConfig.from_pretrained(model_name)
 
+print_rank0(f"*** After  config = AutoConfig.from_pretrained(model_name) {model_name}")
+
+
 # XXX: can't automatically derive dtype via config's `from_pretrained`
 dtype = torch.bfloat16 if model_name in ["bigscience/bloom", "bigscience/bigscience-small-testing"] else torch.float16
 
